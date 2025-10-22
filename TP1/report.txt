@@ -1,0 +1,1 @@
+1-1 It is better to run the container with a flag -e because, with this, all the passwords and others sensitive data are only available to the running container. So there is no risk of leaks. 
