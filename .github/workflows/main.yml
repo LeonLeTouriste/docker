@@ -22,6 +22,9 @@ jobs:
      #finally build your app with the latest command
       - name: Build and test with Maven
         run: mvn clean verify --file BackendAPI/pom.xml
+      - name: I don't know
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=LeonLeTouriste_docker -Dsonar.organization=UnTouriste -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file BackendAPI/pom.xml
+
 
   # define job to build and publish docker image
   build-and-push-docker-image:
@@ -66,7 +69,5 @@ jobs:
           tags:  ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-http-server:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
-      - name: I don't know
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=LeonLeTouriste_docker -Dsonar.organization=UnTouriste -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file BackendAPI/pom.xml
-#YOLO
+      #YOLO
 
