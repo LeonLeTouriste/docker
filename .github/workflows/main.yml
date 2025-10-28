@@ -21,7 +21,7 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean verify --file BackendAPI/pom.xml
+        run: mvn clean verify --file simple-api/pom.xml
       - name: I don't know
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=LeonLeTouriste_docker -Dsonar.organization=leonletouriste -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file BackendAPI/pom.xml
 
