@@ -1,0 +1,7 @@
+- name: Create a network
+  community.docker.docker_network:
+    name: app-network
+
+- name: Create a network
+  community.docker.docker_network:
+    name: proxy-network

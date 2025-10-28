@@ -1,0 +1,10 @@
+- name: Launch proxy container (Nginx)
+  become: yes
+  community.docker.docker_container:
+    name: proxy
+    image: leonletouriste/tp-devops-http-server
+    restart_policy: always
+    networks:
+      - name: app-network
+    ports:
+      - "80:80"

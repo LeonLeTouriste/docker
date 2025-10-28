@@ -1,0 +1,17 @@
+- name: Copy database .env file
+  ansible.builtin.copy:
+    src: ".env"
+    dest: /opt/.env.database
+    mode: '0600'
+
+- name: Launch database container (PostgreSQL)
+  become: yes
+  community.docker.docker_container:
+    name: Database
+    image: leonletouriste/tp-devops-database
+    restart_policy: always
+    env_file: /opt/.env.database
+    networks:
+      - name: app-network
+    ports:
+      - "5432:5432"
