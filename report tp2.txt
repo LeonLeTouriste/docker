@@ -1,2 +1,0 @@
-2-1 Testcontainers is a library that contains test database to put inside your container while you test it.
-2-2 We need serured variables to protect sensitive datas, enable secure automation and prevent leaks 

@@ -1,3 +1,0 @@
-1-1 It is better to run the container with a flag -e because, with this, all the passwords and others sensitive data are only available to the running container. So there is no risk of leaks.
-1-2 We need a volume attached to the container because, without it, if we delete the container, all the data are lost. The volume can stock the datas even if the container is deleted.
-

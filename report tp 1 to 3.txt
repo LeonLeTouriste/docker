@@ -1,0 +1,26 @@
+1-1 It is better to run the container with a flag -e because, with this, all the passwords and others sensitive data are only available to the running container. So there is no risk of leaks.
+1-2 We need a volume attached to the container because, without it, if we delete the container, all the data are lost. The volume can stock the datas even if the container is deleted.
+1-3 
+1-4 A multistage build is needed because with it, each part has his own environment, so it is easier to understand and to replicate. Furthermore, it is more secure by reducing a potential attack surface.
+1-5 A reverse proxy is needed to have all the backend services in onlt one HTTP port at the end, it is also secure because it let your internal services unexposed to the internet and attacks. 
+1-6 Docker-compose is very important because, with it we can run multi-containers Docker without using docker run for each one of them. So it is faster and easier to get back to it.
+1-7 docker compose up -d : starts all the containers in the background and build images if needed.
+    docker compose down : Stops and removes all containers, networks, and temporary resources created by Compose.
+    docker compose build : Builds or rebuilds service images (usually after code or Dockerfile changes).
+    docker compose logs -f : Shows real-time logs from all running services — essential for debugging.
+    docker compose exec <service> <command> : Executes a command inside a running container — like opening a shell or running migrations.
+1-8
+1-9
+1-10 we put our images into an online repo because it allows us to have access to our image anywhere, it can be useful for team collaboration. It is also a more secured and a faster option. 
+
+2-1 Testcontainers is a library that contains test database to put inside your container while you test it.
+2-2 We need serured variables to protect sensitive datas, enable secure automation and prevent leaks 
+2-3
+2-4 Docker images need to be pushed because it allow other people to use and/or edit them with the latest version, or use an old version if push is done regularly.
+
+3-1
+3-2 
+3-3 
+last question: It isn't 100% safe  to deploy automatically every new image on the hub because the image can have errors in it if a complete review isn't done, or contains bugs that can ruin servers. Also, if a malicious image is added by an attacker who use your docker hub account, it can be very dangerous for everyone. Finally, using the tag 'lastest' isn't very recommanded to avoid unexpected changes if a edit, even very small, is done.
+               To make it more secure, use manual o controlled deploymen triggers, add secrity scanning before every deployement, use version tag instead of latest, use a staging environment before to test images and change permission for pushing or pulling images. 
+
